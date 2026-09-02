@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 Fichas de Apoio Pra Atravessar o Luto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F8F1E5;
+    --card: #F1E7D6;
+    --card-deep: #E8DAC2;
+    --terracotta: #C4835F;
+    --terracotta-deep: #A2643F;
+    --ink: #37281D;
+    --ink-soft: #6C5B49;
+    --ink-faint: #9C8B76;
+    --olive: #7C8360;
+    --olive-deep: #5E6548;
+    --gold: #AD8944;
+    --line: rgba(55,40,29,0.14);
+    --shadow: 0 14px 34px rgba(55,40,29,0.12);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img{ max-width:100%; display:block; }
+
+  h1,h2,h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+  .wrap-narrow{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  section{ padding: 80px 0; position: relative; }
+  section + section{ border-top: 1px solid var(--line); }
+
+  .eyebrow{
+    font-size: 14px;
+    color: var(--terracotta-deep);
+    letter-spacing: 0.01em;
+    margin-bottom: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow svg{ flex: none; }
+
+  /* leaf icon reused as motif */
+  .leaf{ color: var(--olive); }
+
+  /* ---------- decorative rings, echoing the product mockup ---------- */
+  .ring{
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid;
+    pointer-events: none;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 56px 0 0;
+    border-top: none;
+    overflow: hidden;
+  }
+  .hero .ring.r1{ width:64px; height:64px; border-color: var(--terracotta); top: 40px; left: -10px; opacity:.55; }
+  .hero .ring.r2{ width:34px; height:34px; border-color: var(--olive); bottom: 60px; left: 18%; opacity:.45; }
+
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 24px;
+  }
+  .hero-copy{ padding-bottom: 64px; }
+  .hero h1{
+    font-size: 40px;
+    line-height: 1.24;
+    letter-spacing: -0.01em;
+    max-width: 16ch;
+  }
+  .hero p.sub{
+    margin-top: 22px;
+    color: var(--ink-soft);
+    font-size: 17.5px;
+    max-width: 46ch;
+  }
+  .hero-image{
+    position: relative;
+    padding: 20px 0 0;
+  }
+  .hero-image img{
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .btn{
+    display: inline-block;
+    background: var(--terracotta-deep);
+    color: #FBF5EA;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 16px 30px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+    letter-spacing: 0.01em;
+  }
+  .btn:hover{ background: var(--ink); transform: translateY(-1px); }
+  .btn:focus-visible{ outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .hero .btn{ margin-top: 32px; }
+
+  /* ---------- O QUE É ISSO ---------- */
+  .intro p{ color: var(--ink-soft); max-width: 52ch; }
+  .intro .lede{
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 40ch;
+    margin-bottom: 30px;
+  }
+
+  .steps{
+    list-style: none;
+    margin: 26px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .steps li{
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .steps .num{
+    flex: none;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--terracotta);
+    color: var(--terracotta-deep);
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps span.txt{ padding-top: 4px; color: var(--ink-soft); }
+
+  /* ---------- O QUE VEM DENTRO ---------- */
+  .phase{
+    background: var(--card);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 28px 30px;
+    margin-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .phase::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:6px;
+    background: var(--phase-color, var(--terracotta));
+  }
+  .phase:last-child{ margin-bottom:0; }
+  .phase .range{
+    font-size: 13px;
+    color: var(--phase-color, var(--terracotta-deep));
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .phase h3{ font-size: 21px; font-weight: 500; }
+  .phase p{
+    margin: 8px 0 0;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    max-width: 54ch;
+  }
+  .phase.p1{ --phase-color: var(--terracotta-deep); }
+  .phase.p2{ --phase-color: var(--olive-deep); }
+  .phase.p3{ --phase-color: var(--gold); }
+
+  /* ---------- PRA QUEM É ---------- */
+  ul.plain{ list-style: none; margin: 26px 0 0; padding: 0; }
+  ul.plain li{
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 18px;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+  ul.plain li svg{
+    position: absolute; left: 0; top: 3px;
+  }
+  ul.plain li strong{ color: var(--ink); font-weight: 600; }
+
+  /* ---------- O QUE VOCÊ RECEBE ---------- */
+  ul.receive{ list-style: none; margin: 26px 0 0; padding: 0; }
+  ul.receive li{
+    padding: 15px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+  ul.receive li:first-child{ padding-top: 0; }
+  ul.receive li strong{ color: var(--ink); font-weight: 600; }
+
+  /* ---------- BÔNUS ---------- */
+  .bonus-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 26px;
+  }
+  .bonus{
+    background: var(--card);
+    border: 1px solid var(--card-deep);
+    border-radius: 10px;
+    padding: 26px 24px;
+    position: relative;
+  }
+  .bonus-tag{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #FBF5EA;
+    background: var(--gold);
+    padding: 5px 11px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+  }
+  .bonus h3{ font-size: 18px; font-weight: 500; line-height:1.3; }
+  .bonus p{ margin: 10px 0 0; color: var(--ink-soft); font-size: 15px; }
+  .bonus .value{
+    margin-top: 14px;
+    font-size: 14px;
+  }
+  .bonus .value s{ color: var(--ink-faint); }
+  .bonus .value .free{ color: var(--terracotta-deep); font-weight: 700; margin-left: 8px; }
+
+  /* ---------- OFERTA ---------- */
+  .offer{ overflow: hidden; }
+  .offer .ring{ width:120px; height:120px; border-color: var(--terracotta); opacity:.25; top:-30px; right:-30px; }
+  .offer-box{
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 44px 40px;
+    position: relative;
+  }
+  .offer-box ul{
+    list-style: none; padding:0; margin: 24px 0 0;
+  }
+  .offer-box ul li{
+    padding: 11px 0 11px 28px;
+    position: relative;
+    color: var(--ink-soft);
+    border-bottom: 1px dashed var(--line);
+  }
+  .offer-box ul li:last-of-type{ border-bottom: none; }
+  .offer-box ul li::before{
+    content:"";
+    position:absolute; left:0; top:16px;
+    width:9px; height:9px;
+    border-radius:50%;
+    background: var(--terracotta);
+  }
+  .price-block{
+    margin-top: 34px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    text-align: left;
+  }
+  .price{
+    font-family: 'Fraunces', serif;
+    font-size: 44px;
+    color: var(--ink);
+  }
+  .price small{
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    color: var(--ink-faint);
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .price-block .btn{ margin-top: 24px; width: 100%; text-align: center; }
+  .guarantee{
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding: 68px 0 84px;
+    border-top: 1px solid var(--line);
+  }
+  footer p{
+    color: var(--ink-faint);
+    font-size: 14px;
+    max-width: 52ch;
+    margin: 0 0 12px;
+  }
+  footer .guarantee-line{ color: var(--ink-soft); font-weight: 600; }
+  footer .btn{ margin-top: 26px; }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-copy{ order: 2; padding-bottom: 12px; text-align:center; }
+    .hero-image{ order: 1; }
+    .hero h1{ max-width: none; }
+    .hero p.sub{ margin-left:auto; margin-right:auto; }
+    .bonus-grid{ grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px){
+    .hero{ padding: 40px 0 0; }
+    .hero h1{ font-size: 28px; }
+    section{ padding: 56px 0; }
+    .offer-box{ padding: 32px 22px; }
+    .price{ font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/><path d="M2 14C6 10 9 7 13 3" stroke="currentColor" stroke-width="1.2"/></svg>
+            Pra quem perdeu alguém querido
+          </p>
+          <h1>21 Fichas Prontas de Apoio Pra Atravessar o Luto — Um Passo de Cada Vez, no Seu Tempo</h1>
+          <p class="sub">Roteiro com 21 fichas, uma pra cada dia, com espaço pra sentir, lembrar e processar a perda — sem pressa pra "superar", sem fórmula pronta de como você deveria estar se sentindo.</p>
+          <a href="#oferta" class="btn">Quero as 21 Fichas</a>
+        </div>
+        <div class="hero-image">
+          <img src="mockup-fichas-luto.png" alt="Kit de 21 fichas de apoio para o luto, em caixa impressa, com fichas avulsas mostrando frases de acolhimento e disponível também em celular e tablet">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap-narrow">
+      <p class="eyebrow">O que é isso</p>
+      <p class="lede">Não é um material que promete "fechar essa fase" em 21 dias — luto não tem prazo fixo.</p>
+      <p>É um apoio estruturado pros primeiros momentos, com espaço guiado pra sentir sem se cobrar.</p>
+
+      <ul class="steps">
+        <li><span class="num">1</span><span class="txt">Abre a ficha do dia</span></li>
+        <li><span class="num">2</span><span class="txt">Lê o espaço de acolhimento antes do exercício</span></li>
+        <li><span class="num">3</span><span class="txt">Escreve ou reflete no próprio ritmo, sem pressa de terminar</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="wrap-narrow">
+      <p class="eyebrow">O que vem dentro</p>
+
+      <div class="phase p1">
+        <p class="range">Fichas 1 a 7</p>
+        <h3>Primeiros Dias</h3>
+        <p>Espaço pra apenas sentir e nomear o que está acontecendo, sem exigir nada além disso.</p>
+      </div>
+
+      <div class="phase p2">
+        <p class="range">Fichas 8 a 14</p>
+        <h3>Lembrar com Carinho</h3>
+        <p>Exercícios pra revisitar memórias boas sem que isso doa mais do que já dói.</p>
+      </div>
+
+      <div class="phase p3">
+        <p class="range">Fichas 15 a 21</p>
+        <h3>Seguir Cuidando de Si</h3>
+        <p>Fichas voltadas ao autocuidado básico nesse período — sono, alimentação, rotina mínima.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="audience">
+    <div class="wrap-narrow">
+      <p class="eyebrow">Pra quem é</p>
+      <ul class="plain">
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/></svg>Perdeu alguém querido recentemente e não sabe o que fazer com os dias — falta uma <strong>estrutura mínima</strong> pra se apoiar.</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/></svg>Sente que precisa "estar bem" rápido pros outros — e precisa de um <strong>espaço só seu</strong>, sem essa cobrança.</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/></svg>Não tem acesso ou condição de pagar terapia de luto agora — mas quer algo <strong>com direção</strong>, não só um caderno em branco.</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/></svg>Já tentou escrever sozinha e não sabe por onde começar — a ficha guiada <strong>tira esse peso</strong> da folha em branco.</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/></svg>Vive um luto que os outros consideram "menor" — perda de um pet, de uma relação importante, de uma fase — e quer um espaço que <strong>valide isso</strong>.</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="leaf"><path d="M2 14C2 8 6 2 14 2C14 10 8 14 2 14Z" stroke="currentColor" stroke-width="1.2"/></svg>Prefere ter algo físico pra folhear com calma — em vez de aplicativo ou vídeo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap-narrow">
+      <p class="eyebrow">Como funciona</p>
+      <ul class="steps">
+        <li><span class="num">1</span><span class="txt">Compra e recebe o PDF na hora</span></li>
+        <li><span class="num">2</span><span class="txt">Imprime as 21 fichas</span></li>
+        <li><span class="num">3</span><span class="txt">Usa uma por dia, ou no ritmo que fizer sentido — não existe atraso aqui</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="receive">
+    <div class="wrap-narrow">
+      <p class="eyebrow">O que você recebe</p>
+      <ul class="receive">
+        <li><strong>21 fichas em PDF</strong>, com espaço de acolhimento e exercício guiado</li>
+        <li><strong>Organização por fase</strong> (primeiros dias, lembrar, cuidar de si)</li>
+        <li><strong>Formato pra imprimir</strong> e preencher à mão</li>
+        <li><strong>Linguagem respeitosa</strong>, sem clichê nem pressa</li>
+        <li><strong>Acesso imediato</strong> após a compra, disponível pra sempre</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bonuses">
+    <div class="wrap-narrow">
+      <p class="eyebrow">Bônus</p>
+      <div class="bonus-grid">
+        <div class="bonus">
+          <span class="bonus-tag">Bônus 1</span>
+          <h3>Ficha de Registro de Memórias Boas</h3>
+          <p>Espaço pra registrar lembranças específicas que você quer guardar, no seu tempo.</p>
+          <p class="value"><s>R$ 22,00</s><span class="free">incluso</span></p>
+        </div>
+
+        <div class="bonus">
+          <span class="bonus-tag">Bônus 2</span>
+          <h3>Cartão de Apoio Pra Dias Mais Difíceis</h3>
+          <p>Cartão avulso com passos simples pra usar em datas específicas (aniversário, data comemorativa) que costumam pesar mais.</p>
+          <p class="value"><s>R$ 18,00</s><span class="free">incluso</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer" id="oferta">
+    <div class="wrap-narrow">
+      <div class="ring"></div>
+      <p class="eyebrow">Oferta final</p>
+
+      <div class="offer-box">
+        <h3 style="font-size:22px;">Tudo o que você recebe hoje</h3>
+        <ul>
+          <li>Bloco Primeiros Dias (7 fichas)</li>
+          <li>Bloco Lembrar com Carinho (7 fichas)</li>
+          <li>Bloco Seguir Cuidando de Si (7 fichas)</li>
+          <li>Bônus 1 — Ficha de Registro de Memórias Boas</li>
+          <li>Bônus 2 — Cartão de Apoio Pra Dias Difíceis</li>
+          <li>Formato: PDF pronto pra imprimir</li>
+          <li>Entrega: imediata, por e-mail</li>
+          <li>Garantia incondicional de 7 dias</li>
+        </ul>
+
+        <div class="price-block">
+          <p class="price"><small>Pagamento único</small>R$ 9,90</p>
+          <a href="https://pay.cakto.com.br/32cowpb_1079998" class="btn">Quero as 21 Fichas</a>
+          <p class="guarantee">Garantia incondicional de 7 dias — se não for pra você, devolvemos 100%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap-narrow">
+      <p>O processo de luto não segue um cronograma fixo e é diferente pra cada pessoa. Este material é um apoio prático e não substitui acompanhamento psicológico — se sentir necessidade de suporte contínuo, procure um profissional.</p>
+      <p class="guarantee-line">Garantia incondicional de 7 dias — se não for pra você, devolvemos 100%.</p>
+      <a href="https://pay.cakto.com.br/32cowpb_1079998" class="btn">Liberar acesso agora</a>
+    </div>
+  </footer>
+
+</body>
+</html>
